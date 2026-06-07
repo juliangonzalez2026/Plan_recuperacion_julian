@@ -4,6 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1981 Recuperación — Julián González</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="1981">
+<meta name="theme-color" content="#080c14">
+<link id="apple-touch-icon" rel="apple-touch-icon" href="">
+<script>
+// Generate app icon as canvas PNG and inject as apple-touch-icon
+(function(){
+  try {
+    const c = document.createElement('canvas');
+    c.width = 180; c.height = 180;
+    const ctx = c.getContext('2d');
+    // Background gradient
+    const g = ctx.createLinearGradient(0,0,180,180);
+    g.addColorStop(0,'#0a1628');
+    g.addColorStop(1,'#0d1f3c');
+    ctx.fillStyle = g;
+    // Rounded rect
+    const r = 36;
+    ctx.beginPath();
+    ctx.moveTo(r,0); ctx.lineTo(180-r,0);
+    ctx.quadraticCurveTo(180,0,180,r);
+    ctx.lineTo(180,180-r);
+    ctx.quadraticCurveTo(180,180,180-r,180);
+    ctx.lineTo(r,180);
+    ctx.quadraticCurveTo(0,180,0,180-r);
+    ctx.lineTo(0,r);
+    ctx.quadraticCurveTo(0,0,r,0);
+    ctx.closePath();
+    ctx.fill();
+    // Accent line top
+    const ag = ctx.createLinearGradient(20,0,160,0);
+    ag.addColorStop(0,'#0057ff');
+    ag.addColorStop(1,'#00d0ff');
+    ctx.fillStyle = ag;
+    ctx.fillRect(20,18,140,5);
+    // "1981" text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 58px system-ui, -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('1981', 90, 82);
+    // "REC" subtext
+    const sg = ctx.createLinearGradient(0,0,180,0);
+    sg.addColorStop(0,'#0057ff');
+    sg.addColorStop(1,'#00d0ff');
+    ctx.fillStyle = sg;
+    ctx.font = 'bold 28px system-ui, -apple-system, sans-serif';
+    ctx.fillText('RECUPERACIÓN', 90, 128);
+    // Small dot accent
+    ctx.fillStyle = '#0080ff';
+    ctx.beginPath();
+    ctx.arc(90, 155, 4, 0, Math.PI*2);
+    ctx.fill();
+    const dataUrl = c.toDataURL('image/png');
+    document.getElementById('apple-touch-icon').href = dataUrl;
+    // Also set favicon
+    const fav = document.createElement('link');
+    fav.rel = 'icon'; fav.type = 'image/png'; fav.href = dataUrl;
+    document.head.appendChild(fav);
+  } catch(e){}
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script>
 // Apply theme before CSS loads to prevent FOUC
