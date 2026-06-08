@@ -721,34 +721,111 @@ canvas{border-radius:8px}
     </div>
 
     <!-- Form -->
-    <div class="bc-form-panel" id="bcFormPanel">
-      <div class="bc-form-grid">
-        <div class="bc-form-group"><label class="bc-form-label">Fecha</label><input type="date" class="bc-form-input" id="bcDate"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Peso (kg)</label><input type="number" step="0.1" class="bc-form-input" id="bcPeso" placeholder="ej. 105.5"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Cintura (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcCintura" placeholder="ej. 98"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Pecho (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcPecho" placeholder="ej. 110"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Cadera (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcCadera" placeholder="ej. 108"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Brazo Der. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcBrazoDer" placeholder="ej. 37"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Brazo Izq. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcBrazoIzq" placeholder="ej. 36"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Muslo Der. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcMusloDer" placeholder="ej. 62"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Muslo Izq. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcMusloIzq" placeholder="ej. 63"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Pantorrilla Der. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcPantDer" placeholder="ej. 40"></div>
-        <div class="bc-form-group"><label class="bc-form-label">Pantorrilla Izq. (cm)</label><input type="number" step="0.1" class="bc-form-input" id="bcPantIzq" placeholder="ej. 40"></div>
-      </div>
-      <button class="bc-save-btn" onclick="saveMeasurement()">💾 Guardar medición</button>
+<div class="bc-form-panel" id="bcFormPanel">
+  <div class="bc-form-grid">
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Fecha</label>
+      <input type="date" class="bc-form-input" id="bcDate">
     </div>
 
-    <!-- History table -->
-    <div id="bcTableWrap" style="display:none">
-      <div class="bc-table-wrap"><table class="bc-table" id="bcTable">
-        <thead><tr>
-          <th>Fecha</th><th>Peso</th><th>Cintura</th><th>Pecho</th><th>Cadera</th>
-          <th>Brazo D</th><th>Brazo I</th><th>Muslo D</th><th>Muslo I</th>
-          <th>Pant. D</th><th>Pant. I</th><th></th>
-        </tr></thead>
-        <tbody id="bcTableBody"></tbody>
-      </table></div>
+    <div class="bc-form-group">
+      <label class="bc-form-label">Peso (kg)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcPeso" placeholder="ej. 105.5">
     </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Cintura (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcCintura" placeholder="ej. 98">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Cuello (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcCuello" placeholder="ej. 42">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Pecho / Tórax (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcPecho" placeholder="ej. 110">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Cadera (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcCadera" placeholder="ej. 108">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Brazo Der. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcBrazoDer" placeholder="ej. 37">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Brazo Izq. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcBrazoIzq" placeholder="ej. 36">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Antebrazo Der. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcAntebrazoDer" placeholder="ej. 30">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Antebrazo Izq. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcAntebrazoIzq" placeholder="ej. 30">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Muslo Der. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcMusloDer" placeholder="ej. 62">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Muslo Izq. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcMusloIzq" placeholder="ej. 63">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Pantorrilla Der. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcPantDer" placeholder="ej. 40">
+    </div>
+
+    <div class="bc-form-group">
+      <label class="bc-form-label">Pantorrilla Izq. (cm)</label>
+      <input type="number" step="0.1" class="bc-form-input" id="bcPantIzq" placeholder="ej. 40">
+    </div>
+
+  </div>
+
+  <button class="bc-save-btn" onclick="saveMeasurement()">💾 Guardar medición</button>
+</div>
+
+  <!-- History table -->
+<div id="bcTableWrap" style="display:none">
+  <div class="bc-table-wrap">
+    <table class="bc-table" id="bcTable">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Peso</th>
+          <th>Cintura</th>
+          <th>Cuello</th>
+          <th>Pecho</th>
+          <th>Cadera</th>
+          <th>Brazo D</th>
+          <th>Brazo I</th>
+          <th>Antebrazo D</th>
+          <th>Antebrazo I</th>
+          <th>Muslo D</th>
+          <th>Muslo I</th>
+          <th>Pant. D</th>
+          <th>Pant. I</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="bcTableBody"></tbody>
+    </table>
+  </div>
+</div>
 
     <!-- Charts -->
     <div class="bc-charts" id="bcCharts" style="display:none">
@@ -2080,16 +2157,24 @@ function saveMeasurementsToStorage(arr) {
 }
 
 const BC_FIELDS = [
-  { id: 'bcPeso',      key: 'peso',      label: 'Peso',       unit: 'kg', lowerIsBetter: true },
-  { id: 'bcCintura',   key: 'cintura',   label: 'Cintura',    unit: 'cm', lowerIsBetter: true },
-  { id: 'bcPecho',     key: 'pecho',     label: 'Pecho',      unit: 'cm', lowerIsBetter: false },
-  { id: 'bcCadera',    key: 'cadera',    label: 'Cadera',     unit: 'cm', lowerIsBetter: null },
-  { id: 'bcBrazoDer',  key: 'brazoDer',  label: 'Brazo D',    unit: 'cm', lowerIsBetter: false },
-  { id: 'bcBrazoIzq',  key: 'brazoIzq',  label: 'Brazo I',    unit: 'cm', lowerIsBetter: false },
-  { id: 'bcMusloDer',  key: 'musloDer',  label: 'Muslo D',    unit: 'cm', lowerIsBetter: null },
-  { id: 'bcMusloIzq',  key: 'musloIzq',  label: 'Muslo I',    unit: 'cm', lowerIsBetter: null },
-  { id: 'bcPantDer',   key: 'pantDer',   label: 'Pant. D',    unit: 'cm', lowerIsBetter: false },
-  { id: 'bcPantIzq',   key: 'pantIzq',   label: 'Pant. I',    unit: 'cm', lowerIsBetter: false },
+  { id: 'bcPeso',           key: 'peso',          label: 'Peso',            unit: 'kg', lowerIsBetter: true },
+  { id: 'bcCintura',        key: 'cintura',       label: 'Cintura',         unit: 'cm', lowerIsBetter: true },
+  { id: 'bcCuello',         key: 'cuello',        label: 'Cuello',          unit: 'cm', lowerIsBetter: true },
+
+  { id: 'bcPecho',          key: 'pecho',         label: 'Pecho',           unit: 'cm', lowerIsBetter: false },
+  { id: 'bcCadera',         key: 'cadera',        label: 'Cadera',          unit: 'cm', lowerIsBetter: null },
+
+  { id: 'bcBrazoDer',       key: 'brazoDer',      label: 'Brazo D',         unit: 'cm', lowerIsBetter: false },
+  { id: 'bcBrazoIzq',       key: 'brazoIzq',      label: 'Brazo I',         unit: 'cm', lowerIsBetter: false },
+
+  { id: 'bcAntebrazoDer',   key: 'antebrazoDer',  label: 'Antebrazo D',     unit: 'cm', lowerIsBetter: false },
+  { id: 'bcAntebrazoIzq',   key: 'antebrazoIzq',  label: 'Antebrazo I',     unit: 'cm', lowerIsBetter: false },
+
+  { id: 'bcMusloDer',       key: 'musloDer',      label: 'Muslo D',         unit: 'cm', lowerIsBetter: null },
+  { id: 'bcMusloIzq',       key: 'musloIzq',      label: 'Muslo I',         unit: 'cm', lowerIsBetter: null },
+
+  { id: 'bcPantDer',        key: 'pantDer',       label: 'Pant. D',         unit: 'cm', lowerIsBetter: false },
+  { id: 'bcPantIzq',        key: 'pantIzq',       label: 'Pant. I',         unit: 'cm', lowerIsBetter: false }
 ];
 
 function toggleBcForm() {
@@ -2206,7 +2291,25 @@ function renderBodyComposition() {
   // Evolution summary cards
   const first = arr[0] || {};
   const last = arr[arr.length - 1] || {};
+// ===== IMC =====
+const ESTATURA_CM = 181;
+const ESTATURA_M = ESTATURA_CM / 100;
 
+const imc =
+(last.peso && ESTATURA_M)
+  ? (last.peso / (ESTATURA_M * ESTATURA_M))
+  : null;
+
+// ===== % GRASA CORPORAL (Método Navy Hombre) =====
+const grasa =
+(last.cintura && last.cuello)
+  ? (
+      86.010 * Math.log10(last.cintura - last.cuello)
+      - 70.041 * Math.log10(ESTATURA_CM)
+      + 36.76
+    )
+  : null;
+  
   function evoCard(initId, curId, deltaId, lostId, key, unit, lowerIsBetter) {
     const initEl = document.getElementById(initId);
     const curEl = document.getElementById(curId);
@@ -2230,6 +2333,18 @@ function renderBodyComposition() {
   evoCard('evoMusloIzqInit','evoMusloIzqCur','evoMusloIzqDelta','evoMusloIzqLost','musloIzq','cm',null);
   evoCard('evoMusloDerInit','evoMusloDerCur','evoMusloDerDelta','evoMusloDerLost','musloDer','cm',null);
 
+  // ===== IMC =====
+const evoIMC = document.getElementById('evoIMC');
+if (evoIMC) {
+  evoIMC.textContent = imc ? imc.toFixed(1) : '--';
+}
+
+// ===== % GRASA =====
+const evoGrasa = document.getElementById('evoGrasa');
+if (evoGrasa) {
+  evoGrasa.textContent = grasa ? grasa.toFixed(1) + '%' : '--';
+}
+
   // Also update hero weight bar if peso registered
   if (last.peso) {
     const start = 107, target = 97, range = start - target;
@@ -2244,25 +2359,70 @@ function renderBodyComposition() {
 
   if (!hasData) return;
 
-  // Table
-  const tbody = document.getElementById('bcTableBody');
-  tbody.innerHTML = arr.map((m, i) => {
-    const prev = arr[i - 1];
-    function td(key, unit, lib) {
-      const v = m[key];
-      const p = prev ? prev[key] : null;
-      const diff = (v !== null && v !== undefined && p !== null && p !== undefined) ? +(v - p).toFixed(1) : null;
-      const dh = diff !== null ? ` <span class="td-delta ${lib === true ? (diff < 0 ? 'delta-pos' : 'delta-neg') : lib === false ? (diff > 0 ? 'delta-pos' : 'delta-neg') : 'delta-neu'}">${diff > 0 ? '+' : ''}${diff}</span>` : '';
-      return `<td class="td-val">${v !== null && v !== undefined ? v : '—'}${dh}</td>`;
-    }
-    return `<tr>
+// Table
+const tbody = document.getElementById('bcTableBody');
+
+tbody.innerHTML = arr.map((m, i) => {
+  const prev = arr[i - 1];
+
+  function td(key, unit, lib) {
+    const v = m[key];
+    const p = prev ? prev[key] : null;
+
+    const diff =
+      (v !== null && v !== undefined &&
+       p !== null && p !== undefined)
+        ? +(v - p).toFixed(1)
+        : null;
+
+    const dh = diff !== null
+      ? ` <span class="td-delta ${
+          lib === true
+            ? (diff < 0 ? 'delta-pos' : 'delta-neg')
+            : lib === false
+              ? (diff > 0 ? 'delta-pos' : 'delta-neg')
+              : 'delta-neu'
+        }">${diff > 0 ? '+' : ''}${diff}</span>`
+      : '';
+
+    return `<td class="td-val">${v !== null && v !== undefined ? v : '—'}${dh}</td>`;
+  }
+
+  return `
+    <tr>
       <td class="td-date">${m.date}</td>
-      ${td('peso','kg',true)}${td('cintura','cm',true)}${td('pecho','cm',false)}${td('cadera','cm',null)}
-      ${td('brazoDer','cm',false)}${td('brazoIzq','cm',false)}${td('musloDer','cm',null)}${td('musloIzq','cm',null)}
-      ${td('pantDer','cm',false)}${td('pantIzq','cm',false)}
-      <td><button class="bc-del-btn" onclick="deleteMeasurement(${m.id})" title="Eliminar">🗑</button></td>
-    </tr>`;
-  }).join('');
+
+      ${td('peso','kg',true)}
+      ${td('cintura','cm',true)}
+      ${td('cuello','cm',true)}
+
+      ${td('pecho','cm',false)}
+      ${td('cadera','cm',null)}
+
+      ${td('brazoDer','cm',false)}
+      ${td('brazoIzq','cm',false)}
+
+      ${td('antebrazoDer','cm',false)}
+      ${td('antebrazoIzq','cm',false)}
+
+      ${td('musloDer','cm',null)}
+      ${td('musloIzq','cm',null)}
+
+      ${td('pantDer','cm',false)}
+      ${td('pantIzq','cm',false)}
+
+      <td>
+        <button
+          class="bc-del-btn"
+          onclick="deleteMeasurement(${m.id})"
+          title="Eliminar"
+        >
+          🗑
+        </button>
+      </td>
+    </tr>
+  `;
+}).join('');
 
   // Charts
   const labels = arr.map(m => m.date.slice(5)); // MM-DD
